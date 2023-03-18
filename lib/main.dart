@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_google_maps/directions_model.dart';
 import 'package:flutter_google_maps/directions_repository.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-void main() => runApp(const MyApp());
+void main() async {
+  await dotenv.load(fileName: ".env");
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
